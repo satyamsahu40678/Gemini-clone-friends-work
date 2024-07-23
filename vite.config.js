@@ -11,6 +11,6 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0', // Ensure the server is accessible from outside
-    port: parseInt(import.meta.env.VITE_PORT, 10) || 4173, // Use VITE_PORT environment variable or default to 4173
+    port: process.env.PORT ? parseInt(process.env.PORT, 10) : 4173, // Use PORT environment variable or default to 4173
   },
 });
